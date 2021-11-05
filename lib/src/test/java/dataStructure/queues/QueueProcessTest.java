@@ -1,23 +1,22 @@
 package dataStructure.queues;
 
-import dataStructure.Library;
-import dataStructure.list.LinkedList;
+import dataStructure.Work;
 import lombok.extern.java.Log;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
 @Log
-public class QueueProcessImpTest {
+public class QueueProcessTest {
     @Test
     public void testProcessQueue() {
         QueueProcess queueProcess = new QueueProcessImp();
 
-        queueProcess.addQueue(1);
-        queueProcess.addQueue(3);
-        queueProcess.addQueue(4);
-        queueProcess.addQueue(2);
-        queueProcess.addQueue(new Library("harry potter", "J. K"));
+        queueProcess.addQueue(new Work("Doc1", "Oliver", false));
+        queueProcess.addQueue(new Work("Doc2", "Patty", false));
+        queueProcess.addQueue(new Work("Doc3", "Oliver", false));
+        queueProcess.addQueue(new Work("Data", "Oliver", false));
+        queueProcess.addQueue(new Work("CV", "Patty", false));
         log.info("Queue toString : "+queueProcess.toString());
 
         assertTrue("someLibraryMethod should return 'true'", queueProcess.size()==5);
