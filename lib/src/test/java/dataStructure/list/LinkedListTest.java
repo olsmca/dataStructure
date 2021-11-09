@@ -1,7 +1,6 @@
 package dataStructure.list;
 
 import dataStructure.Library;
-import dataStructure.list.LinkedList;
 import lombok.extern.java.Log;
 import org.junit.Test;
 
@@ -11,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 @Log
 public class LinkedListTest {
     @Test public void testSomeNodeMethod() {
-        LinkedList linkedList = new LinkedList();
+        LinkedListFirtsImp linkedList = new LinkedListFirtsImp();
 
         log.info("Init List");
         linkedList.insertFirst(2);
@@ -31,7 +30,7 @@ public class LinkedListTest {
     }
 
     @Test public void testDeleteElement() {
-        LinkedList linkedList = new LinkedList();
+        LinkedListFirtsImp linkedList = new LinkedListFirtsImp();
 
         log.info("Init List");
         linkedList.insertFirst(2);
@@ -58,24 +57,24 @@ public class LinkedListTest {
     }
 
     @Test public void testLibrary() {
-        LinkedList linkedList = new LinkedList();
+        LinkedListFirtsImp linkedList = new LinkedListFirtsImp();
 
         log.info("Init List");
-        linkedList.insertFirst(new Library("Harry Potter 1", "J. K. Rowling"));
-        linkedList.insertFirst(new Library("Harry Potter 2", "J. K. Rowling"));
-        linkedList.insertLatest(new Library("Harry Potter 3", "J. K. Rowling"));
-        linkedList.insertLatest(new Library("Harry Potter 4", "J. K. Rowling"));
+        linkedList.insertFirst(new Library(1,"Harry Potter 1", "J. K. Rowling"));
+        linkedList.insertFirst(new Library(2,"Harry Potter 2", "J. K. Rowling"));
+        linkedList.insertLatest(new Library(3,"Harry Potter 3", "J. K. Rowling"));
+        linkedList.insertLatest(new Library(4,"Harry Potter 4", "J. K. Rowling"));
 
         log.info("print list");
         log.info(linkedList.toString());
         log.info("Delete element");
-        linkedList.deleteNode(new Library("Harry Potter 2", "J. K. Rowling"));
-        linkedList.deleteNode(new Library("Harry Potter 4", "J. K. Rowling"));
+        linkedList.deleteNode(new Library(2,"Harry Potter 2", "J. K. Rowling"));
+        linkedList.deleteNode(new Library(4,"Harry Potter 4", "J. K. Rowling"));
         log.info("print list");
         log.info(linkedList.toString());
-        linkedList.insertSpecific(new Library("Harry Potter 3", "J. K. Rowling"));
-        linkedList.insertLatest(new Library("Harry Potter 4", "J. K. Rowling"));
-        linkedList.insertSpecific(new Library("Harry Potter 3", "J. K. Rowling"));
+        linkedList.insertSpecific(new Library(3,"Harry Potter 3", "J. K. Rowling"));
+        linkedList.insertLatest(new Library(4,"Harry Potter 4", "J. K. Rowling"));
+        linkedList.insertSpecific(new Library(3,"Harry Potter 3", "J. K. Rowling"));
         log.info(linkedList.toString());
         linkedList.deleteLatest();
         log.info(linkedList.toString());

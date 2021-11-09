@@ -12,12 +12,22 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public class Library {
+public class Library implements Comparable<Library>{
 
+    int id;
     String name;
     String autor;
 
     public boolean someLibraryMethod() {
         return true;
+    }
+
+    @Override
+    public int compareTo(Library lib) {
+        if(this.id==lib.getId()){
+            return 0;
+        }else if(this.id<lib.getId()){
+            return -1;
+        }else{return 1;}
     }
 }
