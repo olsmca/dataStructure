@@ -9,7 +9,12 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public class URL {
+public class URL implements Comparable<URL>{
 
     String url;
+
+    @Override
+    public int compareTo(URL url) {
+        return this.url.compareTo(url.url);
+    }
 }

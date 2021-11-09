@@ -137,7 +137,6 @@ public class LinkedListLibraryImp implements LinkedList<Library>{
                     tmp.setNextNode(null);
                     this.numElement--;
                 }
-
             }
         }
     }

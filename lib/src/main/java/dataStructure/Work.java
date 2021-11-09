@@ -9,9 +9,14 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public class Work {
+public class Work implements Comparable<Work>{
 
     private String title;
     private String author;
     private boolean print;
+
+    @Override
+    public int compareTo(Work work) {
+        return this.title.compareTo(work.title);
+    }
 }

@@ -1,6 +1,6 @@
 package dataStructure.stack;
 
-public interface Stack {
+public interface Stack <T extends Comparable>{
     void push(Object data);
     void pop();
     Object peek();
